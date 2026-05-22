@@ -8,6 +8,7 @@ import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
 public class ScrollWalk implements ModInitializer {
     // Stores the current calculated walking speed
     public static double currentSpeed = 0.1;
+    public static double momentumSpeed = 0.1;
     // Holds the configuration instance for accessing settings
     public static ModConfig config;
 
