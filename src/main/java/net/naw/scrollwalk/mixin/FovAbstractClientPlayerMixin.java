@@ -10,8 +10,8 @@ import net.naw.scrollwalk.ScrollWalk;
 @Mixin(AbstractClientPlayer.class)
 public class FovAbstractClientPlayerMixin {
 
-    @Inject(method = "getSpeedFactor", at = @At("RETURN"), cancellable = true)
-    private void onGetSpeedFactor(CallbackInfoReturnable<Float> cir) {
+    @Inject(method = "getFovMultiplier", at = @At("RETURN"), cancellable = true)
+    private void onGetFovMultiplier(CallbackInfoReturnable<Float> cir) {
         // Check if the FOV change is disabled in config
         if (ScrollWalk.config != null && ScrollWalk.config.disableFovChange) {
             // Force return 1.0F to trick the game into thinking the speed is default,
