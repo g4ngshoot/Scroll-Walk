@@ -15,7 +15,7 @@ jobs:
       - name: Build with Gradle
         run: chmod +x gradlew && ./gradlew build
       - name: Upload Artifacts
-        uses: actions/artifacts-upload@v1
+        uses: actions/upload-artifact@v4
         with:
           name: mod-jar
           path: build/libs/*.jar
