@@ -70,6 +70,12 @@ public class ModMenuIntegration implements ModMenuApi {
                     .setSaveConsumer(newValue -> config.acceleration = newValue / 100f)
                     .build());
 
+            // 7. DISABLE FOV CHANGE - Toggle to prevent FOV warping
+            general.addEntry(entryBuilder.startBooleanToggle(Component.literal("Disable FOV Changes"), config.disableFovChange)
+                    .setDefaultValue(false)
+                    .setSaveConsumer(newValue -> config.disableFovChange = newValue)
+                    .build());
+
             // Saves the config file when the screen is closed
             builder.setSavingRunnable(() -> AutoConfig.getConfigHolder(ModConfig.class).save());
 
